@@ -7,7 +7,7 @@ import AppError from '@/utils/appError';
 import errorHandler from '@/utils/handler';
 
 export async function GET(request: NextRequest) {
-	await connectMongodb();
+	await connectMongodb('dbName1');
 	try {
 		const apiKey = request.headers.get('authorization');
 		const permission = request.headers.get('permission');
